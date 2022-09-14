@@ -3,6 +3,8 @@ import sys
 import os
 from datetime import datetime
 
+name_folder = ''
+
 def get_dir_name():
     work_dir = ''
     args = sys.argv
@@ -130,8 +132,12 @@ def check_clear_dir(namedir):
             if os.path.isdir(path_el):
                 check_clear_dir(path_el)
 
-if __name__ == '__main__':
+def main():
+    global name_folder
     name_folder = get_dir_name()
     sorting_dir(name_folder)
     check_clear_dir(name_folder)
+ 
+if __name__ == '__main__':
+    main()
 
